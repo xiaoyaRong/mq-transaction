@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sx.dao.ParkingRecordMqSendDao">
+
+    <insert id="insertOne" parameterType="com.sx.entity.ParkingRecordMqSendEntity">
+
+        insert into parkingRecordMqSend
+            (id,
+             parkingRecordId,
+             plateNumber,
+             body,
+             sendStatus,
+             sendTimes
+            )
+        values (null,
+                #{record.parkingRecordId,jdbcType=VARCHAR},
+                #{record.plateNumber,jdbcType=VARCHAR},
+                #{record.body,jdbcType=VARCHAR},
+                0,
+                1
+               )
+    </insert>
+    <update id="updateByParkingRecordId">
+
+        update parkingRecordMqSend set sendStatus = 1 where parkingRecordId = #{parkingRecordId}
+
+    </update>
+    <select id="selectByParkingRecordId" resultType="com.sx.entity.ParkingRecordMqSendEntity">
+
+        select * from parkingRecordMqSend where parkingRecordId = #{parkingRecordId}
+    </select>
+
+</mapper>

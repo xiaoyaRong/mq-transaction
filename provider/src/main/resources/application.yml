@@ -1,0 +1,40 @@
+#dubbo:
+#  application:
+#    name: provider-server
+#  registry:
+#    address: zookeeper://127.0.0.1:2181
+#  scan:
+#    base-packages: com.rxy.parking.service
+#
+#server:
+#  port: 8081
+
+
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/parking
+#    username: root
+#    password: root
+#    driver-class-name: com.alibaba.druid.proxy.DruidDriver
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/parking?characterEncoding=UTF-8
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver: com.mysql.cj.jdbc.Driver
+  mail:
+    default-encoding: UTF-8
+    username: rongxydvlp@163.com
+    password: DHYGELGAGNRKSEPO
+    host: smtp.163.com
+    protocol: smtp
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+system:
+  deal-message:
+    email: 375945928@qq.com
+

@@ -1,0 +1,9 @@
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/payment?characterEncoding=UTF-8
+    username: root
+    password: root
